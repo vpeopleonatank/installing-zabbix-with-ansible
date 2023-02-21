@@ -32,6 +32,6 @@
     #     state: present
     #     key: "{{ lookup('file', 'id_rsa.pub') }}"
 
-    # - name: Set timezone to Europe/Amsterdam
+    # - name: Set timezone to Asia/Ho_Chi_Minh
     #   community.general.timezone:
-    #     name: Europe/Amsterdam
+    #     name: Asia/Ho_Chi_Minh
