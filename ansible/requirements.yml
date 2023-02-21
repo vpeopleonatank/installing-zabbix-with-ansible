@@ -1,0 +1,12 @@
+
+roles:
+  - name: geerlingguy.mysql
+
+  - src: geerlingguy.apache
+
+  - name: wdijkerman.php
+    src: https://github.com/dj-wasabi/ansible-role-php.git
+
+collections:
+  - name: https://github.com/ansible-collections/community.zabbix.git
+    type: git
