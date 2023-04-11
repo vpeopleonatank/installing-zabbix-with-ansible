@@ -1,16 +1,19 @@
 ---
 
 # Zabbix Server Configuration
-zabbix_server_database: mysql
-zabbix_server_database_long: mysql
-zabbix_server_dbport: 3306
+zabbix_server_database: pgsql
+zabbix_server_database_long: postgresql
+zabbix_server_dbport: 5432
 zabbix_server_dbhost: zabbix-database
 zabbix_server_dbhost_run_install: true
 zabbix_server_privileged_host: "{{ hostvars['node-1']['ansible_host'] }}"
-zabbix_server_mysql_login_host: localhost
-zabbix_server_mysql_login_user: root
-zabbix_server_mysql_login_port: 3306
+#zabbix_server_pgsql_login_host: zabbix-database
+zabbix_server_pgsql_login_user: postgres
+zabbix_server_pgsql_login_port: 5432
+zabbix_server_dbname: zabbix-server
 zabbix_proxy: null
+
+zabbix_database_timescaledb: true
 
 zabbix_websrv: apache
 zabbix_php_fpm_conf_listen: False

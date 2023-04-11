@@ -5,5 +5,5 @@
     - community.zabbix
 
   roles:
-    - role: geerlingguy.mysql
+    - role: geerlingguy.postgresql
     - role: zabbix_proxy

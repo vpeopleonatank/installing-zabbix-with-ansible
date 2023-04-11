@@ -1,9 +1,20 @@
 # Change host file
 ```bash
-ansible-playbook -i hosts ../bastion.yml --ask-become-pass
+ansible-playbook -i hosts ../update_hosts_file.yml --ask-become-pass
 ```
 
 # Install zabbix server
+ssh into database vm to update packages repository
+```bash
+sudo apt update
+```
+- Change postgres-client in role `zabbix_server` in `community.zabbix`, make sure postgres-client and database host 's postgres is same version (currently using postgres 14)
+```bash
+path: ~/.ansible/collections/ansible_collections/community/zabbix/roles/zabbix_server/tasks/Debian.yml
+Change task install postgresql client package to
+`postgresql-client-14`
+```
+- Change max_connections of postgres to 100 because timescaledb-tune change to 25
 ```bash
 ansible-playbook -i hosts zabbix-server.yml
 ```

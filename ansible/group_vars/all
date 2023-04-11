@@ -38,3 +38,11 @@ zabbix_agent_interfaces:
 
 zabbix_macros:
   - "{{ zabbix_macros_append if zabbix_macros_append is defined else [] }}"
+
+# These var used in ubuntu_timescaledb.yml when running zabbix-server.yml
+zabbix_server_pgsql_login_user: "postgres" # in zabbix_server group_vars
+zabbix_server_dbname: "zabbix-server"
+zabbix_server_dbuser: "zabbix-server"
+postgresql_version: 14
+# listen_addresses_postgresql: "{{ hostvars['bastion'].ansible_host }}"
+listen_addresses_postgresql: "*"
